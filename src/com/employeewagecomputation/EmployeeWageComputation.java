@@ -1,36 +1,55 @@
 package com.employeewagecomputation;
-public class EmployeeWageComputation {
+
+import java.util.Random;
+
+public class EmployeeWageComputation
+{
     //default constructor
     public EmployeeWageComputation() {
         System.out.println("Welcome to Employee Wage Computation!");
     }
-
     public static void main(String[] args) {
-        //initialize the constructor by creating a object of a class
-        EmployeeWageComputation employee =new EmployeeWageComputation();
         //Declaring the variables.
-        double isPartTime = 1;
-        double isFullTime = 2;
-        double randomCheck = (double) Math.floor((Math.random() * 10) % 3);
+        Random random = new Random();
+        int randomCheck = random.nextInt(3);
         int empHour;
         int wagePerHour = 20;
-        int salary = 0;
+        int salary;
 
-        //Adding part-time Employee and his/her wage.
-        if (randomCheck == isFullTime) {
-            int fullTimeHour = 16;
-            empHour = fullTimeHour;
-            salary = empHour * wagePerHour;
-            System.out.println("Salary is: $" + salary);
-        } else if (randomCheck == isPartTime) {
-            int partTimeHour = 8;
-            empHour = partTimeHour;
-            salary = empHour * wagePerHour;
-            System.out.println("Salary is: $" + salary);
-        } else {
-            empHour = 0;
-            System.out.println("Salary is: $" + salary);
+        //Checking for part-time and full time by Switch case.
+        switch (randomCheck) {
+            case 0:
+                System.out.println("Employee is absent");
+                empHour = 0;
+                salary = empHour * wagePerHour;
+                System.out.println("Salary is: $" + salary);
+                break;
+            case 1:
+                System.out.println("Employee is working part-time");
+                int partTimeHour = 8;
+                empHour = partTimeHour;
+                salary = empHour * wagePerHour;
+                System.out.println("Salary is: $" + salary);
+                break;
+            case 2:
+                System.out.println("Employee is working full-time");
+                int fullTimeHour = 16;
+                empHour = fullTimeHour;
+                salary = empHour * wagePerHour;
+                System.out.println("Salary is: $" + salary);
+                break;
         }
 
-    }
+
+
+
+
+
+
+
+
+   }
 }
+
+
+
