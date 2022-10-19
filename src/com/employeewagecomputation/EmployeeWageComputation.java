@@ -9,22 +9,28 @@ public class EmployeeWageComputation {
         //initialize the constructor by creating a object of a class
         EmployeeWageComputation employee =new EmployeeWageComputation();
         //Declaring the variables.
-        double isPresent = 1;
-        double randomCheck = (double) Math.floor((Math.random() * 10) % 2);
-        int fullDayHour = 8;
+        double isPartTime = 1;
+        double isFullTime = 2;
+        double randomCheck = (double) Math.floor((Math.random() * 10) % 3);
+        int empHour;
         int wagePerHour = 20;
         int salary = 0;
 
-        ////Checking if the Employee is present, then calculating his/her daily wage.
-        if (randomCheck == isPresent) {
-            System.out.println("Employee is present");
-            salary = fullDayHour * wagePerHour;
+        //Adding part-time Employee and his/her wage.
+        if (randomCheck == isFullTime) {
+            int fullTimeHour = 16;
+            empHour = fullTimeHour;
+            salary = empHour * wagePerHour;
+            System.out.println("Salary is: $" + salary);
+        } else if (randomCheck == isPartTime) {
+            int partTimeHour = 8;
+            empHour = partTimeHour;
+            salary = empHour * wagePerHour;
             System.out.println("Salary is: $" + salary);
         } else {
-            System.out.println("Employee is absent");
+            empHour = 0;
             System.out.println("Salary is: $" + salary);
         }
-
 
     }
 }
