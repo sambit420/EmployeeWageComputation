@@ -1,55 +1,63 @@
-package com.employeewagecomputation;
+ package com.employeewagecomputation;
 
 import java.util.Random;
 
-public class EmployeeWageComputation
-{
+public class EmployeeWageComputation {
     //default constructor
     public EmployeeWageComputation() {
         System.out.println("Welcome to Employee Wage Computation!");
     }
+
     public static void main(String[] args) {
         //Declaring the variables.
         Random random = new Random();
-        int randomCheck = random.nextInt(3);
+        int randomCheck;
         int empHour;
         int wagePerHour = 20;
-        int salary;
+        int salary = 0;
+        int numWorkingDays = 20;
+        int monthlySalary = 0;
 
-        //Checking for part-time and full time by Switch case.
-        switch (randomCheck) {
-            case 0:
-                System.out.println("Employee is absent");
-                empHour = 0;
-                salary = empHour * wagePerHour;
-                System.out.println("Salary is: $" + salary);
-                break;
-            case 1:
-                System.out.println("Employee is working part-time");
-                int partTimeHour = 8;
-                empHour = partTimeHour;
-                salary = empHour * wagePerHour;
-                System.out.println("Salary is: $" + salary);
-                break;
-            case 2:
-                System.out.println("Employee is working full-time");
-                int fullTimeHour = 16;
-                empHour = fullTimeHour;
-                salary = empHour * wagePerHour;
-                System.out.println("Salary is: $" + salary);
-                break;
+        //Calculating the number of working days of an Employee randomly.
+        for (int i = 1; i <= numWorkingDays; i++) {
+            randomCheck = random.nextInt(3);
+            switch (randomCheck) {
+                case 0:
+                    System.out.println("Employee is absent");
+                    empHour = 0;
+                    salary = empHour * wagePerHour;
+                    break;
+                case 1:
+                    System.out.println("Employee is working part-time");
+                    int partTimeHour = 8;
+                    empHour = partTimeHour;
+                    salary = empHour * wagePerHour;
+                    break;
+                case 2:
+                    System.out.println("Employee is working full-time");
+                    int fullTimeHour = 16;
+                    empHour = fullTimeHour;
+                    salary = empHour * wagePerHour;
+                    break;
+            }
+            monthlySalary = monthlySalary + salary;
         }
+        System.out.println("Salary of an Employee in a month is: $" + monthlySalary);
 
 
-
-
-
-
-
-
-
-   }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
