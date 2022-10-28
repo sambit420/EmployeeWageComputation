@@ -1,12 +1,9 @@
-package com.employeewagecomputation;
+
 //Encapsulated Class
+package com.employeewagecomputation;
 
 
-public class EmployeeWageBuilder {
-
-    //Declaring the constants
-    private final static int isPartTimeHour = 4;
-    private final static int isFullTimeHour = 8;
+public class EmployeeWageBuilder implements ComputeEmployeeWage {
 
     private int numOfCompany = 0;
     private CompanyEmpWage[] companyEmpWageArray;
@@ -80,5 +77,7 @@ public class EmployeeWageBuilder {
         return monthlySalary;
     }
 
-}
+    }
+
+
 

@@ -2,6 +2,7 @@ package com.employeewagecomputation;
 
 public class CompanyEmpWage {
 
+
     //Declaring the object referred variables
     public final String companyName;
     public final int empWagePerHour;
@@ -24,6 +25,6 @@ public class CompanyEmpWage {
 
     @Override
     public String toString() {
-        return "Total Wage for Company: " + companyName + " is " + monthlySalary;
+        return "Total Wage for Company: "+companyName+" is "+monthlySalary;
     }
 }

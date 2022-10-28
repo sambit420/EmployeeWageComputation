@@ -9,6 +9,7 @@
 //Use Case-8 is to compute Employee Wage for multiple companies.
 //Use Case-9 is to create EmployeeWageBuilder for each company.
 //Use Case-10 is to manage Employee Wage of multiple companies.
+//Use Case-11 is to manage Employee Wage of multiple companies using Interface approach.
 package com.employeewagecomputation;
 
 public class EmployeeWageComputation {
@@ -18,6 +19,7 @@ public class EmployeeWageComputation {
         {
                 System.out.println("Welcome to Employee Wage Computation Program..!");
         }
+
         public static void main(String[] args) {
 
                 //Initializing the constructor by creating the object of the class.
@@ -31,7 +33,6 @@ public class EmployeeWageComputation {
                 employeeWageBuilder.addCompanyEmployeeWage("Amazon",60,180,22);
                 employeeWageBuilder.addCompanyEmployeeWage("Apple",30,190,26);
                 employeeWageBuilder.computeEmpWage();
-
 
         }
 
