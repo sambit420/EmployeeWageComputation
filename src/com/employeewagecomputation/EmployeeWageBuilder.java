@@ -1,5 +1,4 @@
 package com.employeewagecomputation;
-
 public class EmployeeWageBuilder {
 
     //Declaring the constants
