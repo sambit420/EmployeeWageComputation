@@ -4,15 +4,19 @@ package com.employeewagecomputation;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeWageBuilder implements ComputeEmployeeWage {
 
     private List<CompanyEmpWage> companyEmpWageList;
+    private Map<String,CompanyEmpWage> companyEmpWageMap;
 
     //Define Default Constructor
     public EmployeeWageBuilder() {
         companyEmpWageList = new ArrayList<CompanyEmpWage>();
+        companyEmpWageMap = new HashMap<String,CompanyEmpWage>();
     }
 
     //Adding company to an array
@@ -20,6 +24,7 @@ public class EmployeeWageBuilder implements ComputeEmployeeWage {
     {
         CompanyEmpWage companyEmpWage = new CompanyEmpWage(companyName, empWagePerHour, maxWorkingHours, maxWorkingDays);
         companyEmpWageList.add(companyEmpWage);
+        companyEmpWageMap.put(companyName,companyEmpWage);
     }
 
     //Computing employee wage and printing it
@@ -30,6 +35,11 @@ public class EmployeeWageBuilder implements ComputeEmployeeWage {
             companyEmpWage.setMonthlySalary(this.calculateTotalWage(companyEmpWage));
             System.out.println(companyEmpWage);
         }
+    }
+
+    public int getTotalWage(String company)
+    {
+        return companyEmpWageMap.get(company).monthlySalary;
     }
 
     //Calculating total wage
@@ -68,11 +78,8 @@ public class EmployeeWageBuilder implements ComputeEmployeeWage {
                     break;
             }
 
-            //System.out.print("Day: "+totalWorkingDays+"\t random : "+randomCheck+"\t");
-            companyEmpWage.dailyWage.put(totalWorkingDays,salary);
-            System.out.println(companyEmpWage.dailyWage);
             System.out.print("Working Hours: "+totalWorkingHours+"\t");
-            //System.out.print("Salary is: "+salary+"\t");
+            System.out.print("Salary is: "+salary+"\t");
             System.out.println();
             monthlySalary = monthlySalary + salary;
 

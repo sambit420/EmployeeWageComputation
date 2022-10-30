@@ -10,7 +10,6 @@ public class CompanyEmpWage {
     public final int maxWorkingHours;
     public final int maxWorkingDays;
     public int monthlySalary;
-    public Map<Integer,Integer> dailyWage = new HashMap<>();
 
     //Declaring Parameterised Constructor
     public CompanyEmpWage(String companyName, int empWagePerHour, int maxWorkingHours, int maxWorkingDays) {
@@ -18,6 +17,7 @@ public class CompanyEmpWage {
         this.empWagePerHour = empWagePerHour;
         this.maxWorkingHours = maxWorkingHours;
         this.maxWorkingDays = maxWorkingDays;
+        monthlySalary = 0;
     }
 
     //Setter method for monthlySalary
@@ -28,5 +28,5 @@ public class CompanyEmpWage {
     @Override
     public String toString() {
         return "Total Wage for Company: "+companyName+" is "+monthlySalary;
-    }
+}
 }
