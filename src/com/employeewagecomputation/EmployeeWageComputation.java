@@ -11,7 +11,7 @@
 //Use Case-10 is to manage Employee Wage of multiple companies.
 //Use Case-11 is to manage Employee Wage of multiple companies using Interface approach.
 //Use Case-12 is to manage Employee Wage of multiple companies by means of Array List concept.
-
+//Use Case-13 is to store daily wage along with the total wage.
 package com.employeewagecomputation;
 
 public class EmployeeWageComputation {
@@ -34,7 +34,6 @@ public class EmployeeWageComputation {
                 employeeWageBuilder.addCompanyEmployeeWage("Amazon",60,180,22);
                 employeeWageBuilder.addCompanyEmployeeWage("Apple",30,190,26);
                 employeeWageBuilder.computeEmpWage();
-
         }
 
 }
