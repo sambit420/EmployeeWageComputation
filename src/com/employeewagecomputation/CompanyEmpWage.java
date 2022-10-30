@@ -1,8 +1,6 @@
 package com.employeewagecomputation;
 
 public class CompanyEmpWage {
-
-
     //Declaring the object referred variables
     public final String companyName;
     public final int empWagePerHour;
